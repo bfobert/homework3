@@ -102,6 +102,13 @@ footer{
 p{
     margin-left: 2em;
 }
+#table{
+    text-align:center;
+
+}
+#return{
+    padding:25px;
+}
 }
 
 

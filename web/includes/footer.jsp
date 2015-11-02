@@ -3,7 +3,7 @@
 ${currentYear}
 --%>
 <footer>
-<p>&copy; 2015, Maddie Chili, Zane Laughery and Davis Rumley</p>
+<p>&copy; 2015, Davis Rumley and Benjamin Fobert</p>
 </footer>
 </body>
 </html>
