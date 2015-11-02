@@ -26,6 +26,7 @@ public class currencyTag extends BodyTagSupport {
     @Override
     public int doStartTag() {
         calcs = (ArrayList<Calc>) pageContext.findAttribute("products");
+        System.out.println(calcs + "HI MY NAME IS");
         if (calcs.size() <= 0) {
             return SKIP_BODY;
         } else {
@@ -47,7 +48,19 @@ public class currencyTag extends BodyTagSupport {
         pageContext.setAttribute("price", priceAsString);
         count++;
     }
-
+    private void setCalcAttributes(Calc calc) {
+        Calc c = calc.getCalc();
+        pageContext.setAttribute(
+                "productCode", p.getCode());
+        pageContext.setAttribute(
+                "productDescription", p.getDescription());
+        pageContext.setAttribute(
+                "productPrice", p.getPriceCurrencyFormat());
+        pageContext.setAttribute(
+                "quantity", new Integer(item.getQuantity()));
+        pageContext.setAttribute(
+                "total", item.getTotalCurrencyFormat());
+    }
     @Override
     public int doAfterBody() throws JspException {
         try {
