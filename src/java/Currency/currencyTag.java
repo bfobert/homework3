@@ -49,15 +49,14 @@ public class currencyTag extends BodyTagSupport {
         count++;
     }
     private void setCalcAttributes(Calc calc) {
-        Calc c = calc.getCalc();
         pageContext.setAttribute(
-                "productCode", p.getCode());
+                "InvestmentAmt", calc.getInvestment());
         pageContext.setAttribute(
-                "productDescription", p.getDescription());
+                "InterestRate", calc.getRate());
         pageContext.setAttribute(
-                "productPrice", p.getPriceCurrencyFormat());
+                "productPrice", calc.getPriceCurrencyFormat());
         pageContext.setAttribute(
-                "quantity", new Integer(item.getQuantity()));
+                "quantity",calc.getYears());
         pageContext.setAttribute(
                 "total", item.getTotalCurrencyFormat());
     }
